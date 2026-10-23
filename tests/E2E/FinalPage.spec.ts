@@ -1,13 +1,13 @@
 import {test, expect} from "@playwright/test"
-import { CheckoutOverviewPage } from "../PlaywrightDemoProject/Pages/CheckoutOverviewPage"
-import { LoginPage } from "../PlaywrightDemoProject/Pages/LoginPage";
-import { ProductPage } from "../PlaywrightDemoProject/Pages/ProductPage";
-import { CartPage } from "../PlaywrightDemoProject/Pages/CartPage";
-import { CheckoutPage } from "../PlaywrightDemoProject/Pages/CheckoutPage";
-import { BASE_URL,USERNAME,PASSWORD} from "../PlaywrightDemoProject/Utils/envConfig";
-import { CheckoutData } from "../PlaywrightDemoProject/TestData/checkoutData";
-import { productsToCart } from "../PlaywrightDemoProject/TestData/Products";
-import { FinalPage } from "../PlaywrightDemoProject/Pages/FinalPage";
+import { CheckoutOverviewPage } from "../../PlaywrightDemoProject/Pages/CheckoutOverviewPage"
+import { LoginPage } from "../../PlaywrightDemoProject/Pages/LoginPage";
+import { ProductPage } from "../../PlaywrightDemoProject/Pages/ProductPage";
+import { CartPage } from "../../PlaywrightDemoProject/Pages/CartPage";
+import { CheckoutPage } from "../../PlaywrightDemoProject/Pages/CheckoutPage";
+import { BASE_URL,USERNAME,PASSWORD} from "../../PlaywrightDemoProject/Utils/envConfig";
+import { CheckoutData } from "../../PlaywrightDemoProject/TestData/checkoutData";
+import { productsToCart } from "../../PlaywrightDemoProject/TestData/Products";
+import { FinalPage } from "../../PlaywrightDemoProject/Pages/FinalPage";
 
 test.describe("Final Page Validation", async()=>{
     let loginPage : LoginPage
