@@ -18,6 +18,15 @@ jobs:
 
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    
+    - name: Run playwright tests (Shard ${{ matrix.shard}})
+      run: npx playwright test --shard=${{ matrix.shard}}/4
+    
+    - name: Upload Allure results (Shard ${{ matrix.shard}})
+      uses: actions/upload-artifact@v4
+      with:
+        name: allure-results-shard-${{ matrix.shard }}
+        path: allure-results
 
     - name: Run Playwright tests
       run: npx playwright test tests/smoke
