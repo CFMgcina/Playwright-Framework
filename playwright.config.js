@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
+const ci = Boolean(/** @type {{ process?: { env?: { CI?: string } } }} */ (globalThis).process?.env?.CI);
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -17,11 +19,11 @@ export default defineConfig({
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
+  forbidOnly: ci,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  retries: ci ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: ci ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ['allure-playwright']
