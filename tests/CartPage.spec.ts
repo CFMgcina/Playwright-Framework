@@ -71,7 +71,7 @@ test.describe("Cart Page Validation", async()=>{
         expect(productsToCart).toEqual(cartProductsNames);
     });
 
-    test.only('Validate Remove Button Functionality', async ({page})=>
+    test('Validate Remove Button Functionality', async ({page})=>
     {
 
         await productPage.addAllProductToCart();

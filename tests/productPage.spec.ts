@@ -28,7 +28,7 @@ test.describe("Product Page Validation",async()=>
         await expect(page.locator(LoginLocators.loginButton)).toBeVisible();
     });
 
-    test("Open About Page and Navigating Back", async ({page})=>
+    test("Navigate to About Page and Navigating Back", async ({page})=>
     {
         await productPage.openAboutPage();
         
